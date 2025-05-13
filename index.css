@@ -1,0 +1,158 @@
+body{
+    color: #023653;
+    background-color: #C3E4E9;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+
+}
+
+#home-img{
+    width: 450px;
+    height: 350px;
+    border-radius: 0 0 0 10% ; /* Ajusta o arredondamento das bordas */
+    border: 5px solid #023653; ; /* Adiciona uma borda colorida, ajuste a cor e a largura conforme necessário */
+    float: right; /* Posiciona a imagem no lado esquerdo */
+    margin: 90px 190px 0 0;
+ }
+
+/* Define a fonte Museo Moderno */
+@font-face {
+    font-family: 'Museo Moderno';
+    src: url('fonts/MuseoModerno-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Museo Moderno';
+    src: url('fonts/MuseoModerno-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Aplica a fonte Museo Moderno apenas ao h1 */
+h1 {
+    font-family: 'Maharlika', sans-serif;
+    font-size: 2.5em; /* Ajuste o tamanho da fonte conforme necessário */
+  /*  color: white; /* Ajuste a cor do texto conforme desejado */
+    padding-left: 20px;
+    padding-top: 40px;
+}
+h2, h3, h4 {
+    margin: 10px 0; /* Adiciona espaço acima e abaixo dos cabeçalhos */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte */
+}
+
+ h2{
+
+    font-size: 1.0em; /* Ajuste o tamanho da fonte conforme necessário */
+    /*color: white; /* Ajuste a cor do texto conforme desejado */
+    padding-left: 20px;
+    padding-top: 30px;
+ }
+ 
+ h3{
+    
+    font-size: 1.0em; /* Ajuste o tamanho da fonte conforme necessário */
+    /*color: white; /* Ajuste a cor do texto conforme desejado */   padding-left: 20px;
+    padding-top: 0px;
+ }
+ 
+ h4{
+   
+    font-size: 1.0em; /* Ajuste o tamanho da fonte conforme necessário */
+    /*color: white; /* Ajuste a cor do texto conforme desejado */
+    padding-left: 20px;
+    padding-top: 0px;
+ }
+.center{
+    text-align: center;
+}
+@font-face {
+    font-family: 'Maharlika';
+    src: url('fonts/Maharlika-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Define a fonte para o corpo */
+body {
+    font-family: 'Maharlika', sans-serif;
+    margin: 0; /* Remove a margem padrão do corpo */
+}
+
+/* Estiliza o menu de navegação */
+nav {
+    display: flex; /* Usa flexbox para o layout */
+    justify-content: space-between; /* Espaça os itens entre as bordas */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    padding-top: 1px; /* Adiciona um pouco de espaço nas laterais do menu */
+    margin-top: 0px; /* Adiciona espaço na parte superior do menu */
+    background-color: #88B4BE; /* Adiciona uma cor de fundo ao menu (opcional) */
+    border-top: 5px solid 6AF15C;
+}
+
+nav .brand {
+    font-size: 25px; /* Ajusta o tamanho da fonte do link */
+    font-weight: bold; /* Adiciona negrito ao texto do link */
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: #023653; /* Ajusta a cor do texto do link */
+    padding-right: 4px;
+}
+
+nav .menu {
+    display: flex; /* Organiza os itens em linha */
+    gap: 15px; /* Adiciona espaço entre os itens */
+    margin-left: auto; /* Move o menu para o canto direito */
+}
+
+nav .menu li {
+    list-style-type: none; /* Remove os marcadores padrão da lista */
+    margin: 0; /* Remove a margem padrão dos itens da lista */
+}
+
+nav .menu a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color:#023653; /* Ajusta a cor do texto dos links */
+    font-size: 13px; /* Ajusta o tamanho da fonte dos links */
+}
+
+nav .menu a:hover {
+    color: #023653; /* Altera a cor do link ao passar o mouse */
+}
+
+/* Estiliza o botão */
+.button {
+    display: inline-block; /* Faz com que o link se comporte como um botão */
+    padding: 10px 20px; /* Define o espaço interno do botão */
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+    color:black; /* Define a cor do texto */
+    background-color: #EEEEEE; /* Define a cor de fundo do botão */
+    text-align: center; /* Centraliza o texto dentro do botão */
+    text-decoration: none; /* Remove o sublinhado do link */
+    border: 1px solid #023653; /* Adiciona uma borda com a mesma cor do fundo */
+    margin: 15px; /* Adiciona um espaço ao redor do botão */
+    border-radius: 30px 30px 30px 30px; /* Arredondamento dos cantos em ordem: topo-esquerdo, topo-direito, inferior-direito, inferior-esquerdo */
+}
+
+.button:hover {
+    background-color: ; /* Altera a cor de fundo quando o mouse está sobre o botão */
+    border-color: ; /* Altera a cor da borda quando o mouse está sobre o botão */
+}
+
+/* Estiliza o rodapé */
+footer {
+    position: fixed; /* Fixa o rodapé na posição */
+    bottom: 0; /* Posiciona o rodapé na parte inferior da janela */
+    width: 100%; /* Faz com que o rodapé ocupe 100% da largura da página */
+    background-color: #88B4BE; /* Cor de fundo opcional para o rodapé */
+    text-align: center; /* Centraliza o texto do rodapé */
+    padding: 1px; /* Espaçamento interno do rodapé */box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra superior opcional */
+}
