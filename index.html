@@ -1,54 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>sitemeu</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="font/Maharlika-Regular.ttf">
-    <title>Sistema Gastrointestinal</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sistema Gastrointestinal</title>
+<style>
+  /* Reset */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem 3rem;
+  }
+  header {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    padding: 2.5rem 1rem 2.5rem;
+    /* background gradient removed here for JS */
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(1, 31, 75, 0.4);
+    margin-bottom: 2.5rem;
+    color: white;
+  }
+  header h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 1.2px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  header p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-top: 0.35rem;
+    color: #dceefa;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  }
+  main {
+    width: 100%;
+    max-width: 900px;
+  }
+  /* Responsive styled table as grid */
+  .organ-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.25rem;
+  }
+  .organ-cell {
+    background: linear-gradient(145deg, #ffffff, #d9e6f7);
+    border-radius: 18px;
+    box-shadow: 5px 5px 12px #b0c7f1, -5px -5px 12px #ffffff;
+    padding: 1.25rem;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 95px;
+    text-align: center;
+    font-weight: 700;
+    color: #305f9f;
+    font-size: 1.1rem;
+    transition: 
+      background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.35s ease;
+  }
+  .organ-cell:hover:not(.active) {
+    background: linear-gradient(145deg, #5aa0f7, #3385f0);
+    color: white;
+    box-shadow: 6px 6px 20px rgba(51, 133, 240, 0.7), -6px -6px 20px #7cccfd;
+  }
+  .organ-cell.active {
+    cursor: revert;
+    color: #243454;
+    font-weight: 500;
+    background: linear-gradient(145deg, #e8efff, #c4d1fc);
+    font-size: 0.98rem;
+    box-shadow: inset 6px 6px 10px #b8c9f5, inset -6px -6px 10px #f0f6ff;
+    padding: 1.3rem 1.5rem;
+    line-height: 1.3;
+  }
+  /* Responsive adjustments */
+  @media (max-width: 440px) {
+    .organ-table {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .organ-cell {
+      font-size: 1rem;
+      min-height: 80px;
+      padding: 1rem;
+    }
+    header {
+      padding: 2rem 1rem 2rem;
+    }
+    header h1 {
+      font-size: 2.25rem;
+    }
+    header p {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 300px) {
+    .organ-table {
+      grid-template-columns: 1fr;
+    }
+    .organ-cell {
+      min-height: 70px;
+      font-size: 0.95rem;
+    }
+  }
+</style>
 </head>
 <body>
-    <header>
-        <nav> 
-            <a href="index.html" class="brand">Sistema Gastrointestinal</a>
-        </nav> 
-    </header
-    <main>
-        <h1>Clique e descubra a função de cada parte do nosso sistema gastroinstestinal</h1> 
-    </main>
-    <table>
-        <tr>
-            <td data-orgao="Boca" onclick="mostrarInfo(this, 'Responsável pela mastigação e início da digestão.')">Boca</td>
-            <td data-orgao="Esôfago"onclick="mostrarInfo(this, 'Canal que transporta o alimento da boca para o estômago.')">Esôfago</td>
-            <td data-orgao="Estômago"onclick="mostrarInfo(this, 'Realiza a digestão química e mecânica dos alimentos.')">Estômago</td>
-        </tr>
-        <tr>
-            <td data-orgao="Intestino"onclick="mostrarInfo(this, 'Absorve a maior parte dos nutrientes dos alimentos.')">Intestino Delgado</td>
-            <td data-orgao="Intestino Grosso"onclick="mostrarInfo(this, 'Absorve água e forma as fezes.')">Intestino Grosso</td>
-            <td data-orgao="Ânus"onclick="mostrarInfo(this, 'Armazena e elimina as fezes.')">Ânus</td>
-        </tr>
-        <tr>
-            <td data-orgao="Fígado"onclick="mostrarInfo(this, 'Produz a bile, que auxilia na digestão de gorduras.')">Fígado</td>
-            <td data-orgao="Vesícula Biliar"onclick="mostrarInfo(this, 'Armazena a bile produzida pelo fígado.')">Vesícula Biliar</td>
-            <td data-orgao="Pâncreas"onclick="mostrarInfo(this, 'Produz enzimas digestivas e insulina.')">Pâncreas</td>
-        </tr>
-        <tr>
-            <td data-orgao="Glândulas Salivares" onclick="mostrarInfo(this, 'Produzem a saliva, que inicia a digestão dos alimentos na boca.')">Glândulas Salivares</td>
-            <td data-orgao="Apêndice" onclick="mostrarInfo(this, 'Pequena estrutura ligada ao intestino grosso, com função imunológica secundária.')">Apêndice</td>
-        <td data-orgao="Reto" onclick="mostrarInfo(this, 'Armazena as fezes antes da eliminação.')">Reto</td>
-    </table>
-
-    <script src="teste.js"></script>
-
-    <footer>
-        <p>Feito por Patrícia'</p>
-    </footer>
-</body>
-<script src="teste.js">
-
-     
+<header id="pageHeader">
+  <h1>Sistema Gastrointestinal</h1>
+  <p>Clique e descubra sobre de cada parte do nosso sistema gastrointestinal</p>
+</header>
+<main>
+  <div class="organ-table" id="organTable">
+    <div class="organ-cell" data-name="Boca" data-info="Entrada do sistema digestivo, responsável pela mastigação, início da digestão pelo amido, e formação do bolo alimentar.">Boca</div>
+    <div class="organ-cell" data-name="Esôfago" data-info="Canal que transporta o alimento da boca até o estômago através de movimentos peristálticos.">Esôfago</div>
+    <div class="organ-cell" data-name="Estômago" data-info="Órgão que realiza a digestão química e mecânica dos alimentos, produzindo suco gástrico para quebrar proteínas.">Estômago</div>
+    <div class="organ-cell" data-name="Intestino Delgado" data-info="Principal local de absorção dos nutrientes digeridos para o sangue.">Intestino Delgado</div>
+    <div class="organ-cell" data-name="Intestino Grosso" data-info="Absorve água e sais minerais, formando o bolo fecal e preparando-o para eliminação.">Intestino Grosso</div>
+    <div class="organ-cell" data-name="Ânus" data-info="Abertura final do sistema digestivo, responsável pela eliminação das fezes.">Ânus</div>
+    <div class="organ-cell" data-name="Fígado" data-info="Produz bile para ajudar na digestão de gorduras e processa nutrientes absorvidos.">Fígado</div>
+    <div class="organ-cell" data-name="Vesícula Biliar" data-info="Armazena e concentra a bile produzida pelo fígado para liberar no intestino delgado.">Vesícula Biliar</div>
+    <div class="organ-cell" data-name="Pâncreas" data-info="Produz enzimas digestivas e hormônios como a insulina que regulam o metabolismo.">Pâncreas</div>
+    <div class="organ-cell" data-name="Glândulas Salivares" data-info="Produzem saliva que umedece o alimento e inicia a digestão do amido na boca.">Glândulas Salivares</div>
+    <div class="organ-cell" data-name="Apêndice" data-info="Pequena extensão do intestino grosso; tem funções imunes, mas considerada vestigial.">Apêndice</div>
+    <div class="organ-cell" data-name="Reto" data-info="Armazena as fezes antes da eliminação pelo ânus.">Reto</div>
+  </div>
+</main>
+<script>
+  // Apply clean navy blue gradient background using JS to header
+  const header = document.getElementById('pageHeader');
+  header.style.background = 'linear-gradient(135deg, #011f4b, #03396c, #005b96)';
+  
+  const organCells = document.querySelectorAll('.organ-cell');
+  organCells.forEach(cell => {
+    cell.addEventListener('click', () => {
+      const isActive = cell.classList.contains('active');
+      if (!isActive) {
+        // Show info
+        cell.textContent = cell.getAttribute('data-info');
+        cell.classList.add('active');
+      } else {
+        // Show name
+        cell.textContent = cell.getAttribute('data-name');
+        cell.classList.remove('active');
+      }
+    });
+  });
 </script>
+</body>
 </html>
 
